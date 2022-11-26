@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     #region State
 
     public IdleState idleState {get; private set;}
+    public InAirState inAirState {get; private set;}
+    public JumpState jumpState {get; private set;}
     public DashState dashState {get; private set;}
     public HitState hitState {get; private set;}
     public MoveState moveState {get; private set;}
@@ -18,6 +20,8 @@ public class Player : MonoBehaviour
     #region Animation Clip Data
 
     int idleId = Animator.StringToHash("Idle");
+    int inAirId = Animator.StringToHash("In Air");
+    int jumpId = Animator.StringToHash("Jump");
     int dashId = Animator.StringToHash("Dash");
     int meleeAttackId = Animator.StringToHash("Melee Attack");
     int moveId = Animator.StringToHash("Move");
@@ -52,6 +56,8 @@ public class Player : MonoBehaviour
         stateMachine = new StateMachine();
         
         idleState = new IdleState(this, core, stateMachine, data, idleId);
+        inAirState = new InAirState(this, core, stateMachine, data, inAirId);
+        jumpState = new JumpState(this, core, stateMachine, data, jumpId);
         dashState = new DashState(this, core, stateMachine, data, dashId);
         hitState = new HitState(this, core, stateMachine, data, hitId);
         moveState = new MoveState(this, core, stateMachine, data, moveId);

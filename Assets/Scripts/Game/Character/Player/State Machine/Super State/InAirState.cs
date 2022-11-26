@@ -35,19 +35,19 @@ public class InAirState : State
 
     void ChangeState()
     {
-        // if (player.inputManager.dashInput && player.dashState.CanDash())
-        // {
-        //     stateMachine.ChangeState(player.dashState);
-        // }
-        // else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
-        // {
-        //     stateMachine.ChangeState(player.meleeAttackState);
-        // }
-        // else if (collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
-        // {
-        //     stateMachine.ChangeState(player.idleState);
-        //     //SpawnLandVFX(); todo
-        // }
+        if (player.inputManager.dashInput && player.dashState.CanDash())
+        {
+            stateMachine.ChangeState(player.dashState);
+        }
+        else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
+        {
+            stateMachine.ChangeState(player.meleeAttackState);
+        }
+        else if (collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
+        {
+            stateMachine.ChangeState(player.idleState);
+            SpawnLandVFX();
+        }
     }
 
     void SpawnLandVFX()

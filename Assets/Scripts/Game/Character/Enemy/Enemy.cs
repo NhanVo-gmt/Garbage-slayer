@@ -113,12 +113,21 @@ public class Enemy : MonoBehaviour
             target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero);
             Die();
         }
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (!data.isFalling) return;
+
+        if (other.collider.CompareTag("Ground"))
+        {
+            Die();
+        }
     }
 
     void Die() 
     {
         pooledObject.Release();
+        tree.Reset();
     }
 
 

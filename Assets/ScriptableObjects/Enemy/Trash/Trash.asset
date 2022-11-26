@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthData: {fileID: 11400000, guid: 45796c971d9c4674fa79a0fe91c6ecbe, type: 2}
   isFlying: 0
+  isFalling: 0
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}
-  knockbackType: 0
+  knockbackType: 1

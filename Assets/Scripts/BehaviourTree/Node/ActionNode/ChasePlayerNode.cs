@@ -83,8 +83,11 @@ public class ChasePlayerNode : ActionNode
         movement.SetVelocityZero();
     }
 
+#if UNITY_EDITOR
     public override void DrawGizmos()
     {
         BehaviourTreeDrawingGizmos.DrawWireSphere(stoppingDistance);
     }
+
+#endif
 }
