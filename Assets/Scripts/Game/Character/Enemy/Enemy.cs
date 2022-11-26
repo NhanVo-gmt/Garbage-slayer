@@ -106,6 +106,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     private void OnTriggerStay2D(Collider2D other) {
+        if (data.isBoss) return;
         if (other == col) return;
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))

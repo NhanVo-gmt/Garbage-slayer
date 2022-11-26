@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField] GameObject[] spawnedEnemy;
-    [SerializeField] float spawnRate;
+    [SerializeField] public float spawnRate;
 
     void Start() 
     {
@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject SpawnPooledPrefab()
     {   
         GameObject spawnedPrefab = poolingManager.GetObjectFromPool(spawnedEnemy[GetRandomIndex()]);
-        SetParent(spawnedPrefab);
+        //SetParent(spawnedPrefab);
         SetPrefabPosition(spawnedPrefab);
 
         return spawnedPrefab;
@@ -61,4 +61,8 @@ public class EnemySpawner : MonoBehaviour
         Gizmos.DrawLine(startPos, endPos);
     }
 
+    public void CancelSpawn()
+    {
+        CancelInvoke();
+    }
 }

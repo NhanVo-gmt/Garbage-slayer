@@ -1,5 +1,26 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9191433563325063960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538b68e45e8be05448feb9826174f5dd, type: 3}
+  m_Name: SpriteSettingNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 34555bd7204849a46a1b5177981bdfdc
+  player: {fileID: 0}
+  position: {x: -1199.1321, y: 341.60004}
+  description: 
+  layerName: BackGround
+  order: 1
+  color: {r: 1, g: 1, b: 1, a: 0.2784314}
 --- !u!114 &-8675846431988645619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +37,7 @@ MonoBehaviour:
   started: 0
   guid: 3f4ccc096dae3dc4b82f27b21fe77eb7
   player: {fileID: 0}
-  position: {x: -293.60004, y: 287.99988}
+  position: {x: -57.60007, y: 288}
   description: 
   pointWays:
   - {x: -11, y: 0}
@@ -107,6 +128,27 @@ MonoBehaviour:
   position: {x: 169.60004, y: -266.23755}
   description: 
   child: {fileID: -3291785757681707267}
+--- !u!114 &-3527308587641732102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538b68e45e8be05448feb9826174f5dd, type: 3}
+  m_Name: SpriteSettingNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b4dfd7cc946fe114eadf42fb5494cd3d
+  player: {fileID: 0}
+  position: {x: -57.59999, y: 428.98}
+  description: 
+  layerName: Instance
+  order: -1
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &-3291785757681707267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,13 +189,13 @@ MonoBehaviour:
   position: {x: -443.99982, y: 98.40002}
   description: first stage
   children:
-  - {fileID: 143435064029844156}
+  - {fileID: 7957742063383468360}
   - {fileID: 2474755083813864137}
-  - {fileID: -1159817770528626720}
+  - {fileID: 585424504379853891}
   - {fileID: -878754188583632303}
   - {fileID: 1729900390672464412}
+  - {fileID: 1227164549831812827}
   - {fileID: -8675846431988645619}
-  - {fileID: 1279089477344075513}
 --- !u!114 &-1159817770528626720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +212,7 @@ MonoBehaviour:
   started: 0
   guid: 26fc6339801e88a43b4332d374116785
   player: {fileID: 0}
-  position: {x: -812.8001, y: 287.99988}
+  position: {x: -518.8, y: 461.20007}
   description: 
   duration: 1
 --- !u!114 &-878754188583632303
@@ -189,10 +231,10 @@ MonoBehaviour:
   started: 0
   guid: 2f725dcd1bb66ec49bc34acc28ee5ebd
   player: {fileID: 0}
-  position: {x: -644.80005, y: 287.99988}
+  position: {x: -542.39984, y: 290}
   description: 
   pointWays:
-  - {x: -16, y: 0}
+  - {x: -20, y: 0}
   velocity: 10
 --- !u!114 &-704471615141786572
 MonoBehaviour:
@@ -269,6 +311,13 @@ MonoBehaviour:
   - {fileID: -704471615141786572}
   - {fileID: 143435064029844156}
   - {fileID: 1279089477344075513}
+  - {fileID: 7957742063383468360}
+  - {fileID: 1227164549831812827}
+  - {fileID: -9191433563325063960}
+  - {fileID: -3527308587641732102}
+  - {fileID: 2652142262701977821}
+  - {fileID: 967158682434255619}
+  - {fileID: 585424504379853891}
   offset: {x: 300, y: 0}
 --- !u!114 &143435064029844156
 MonoBehaviour:
@@ -286,9 +335,75 @@ MonoBehaviour:
   started: 0
   guid: c72af124e3829fb4dbc33d8e37dd56f1
   player: {fileID: 0}
-  position: {x: -1196.2836, y: 288.00003}
+  position: {x: -1418.332, y: 341.60004}
   description: 1 is active 0 is inactive
   setActive: 0
+--- !u!114 &585424504379853891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3ff52f6fe67196342b1df85dd02098c9
+  player: {fileID: 0}
+  position: {x: -748.9394, y: 308.40002}
+  description: 
+  children:
+  - {fileID: 2652142262701977821}
+  - {fileID: 967158682434255619}
+  - {fileID: -1159817770528626720}
+  successType: 1
+--- !u!114 &967158682434255619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538b68e45e8be05448feb9826174f5dd, type: 3}
+  m_Name: SpriteSettingNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c07e45455db36984e8f44bbc417c25c3
+  player: {fileID: 0}
+  position: {x: -673.99994, y: 461.60007}
+  description: 
+  layerName: BackGround
+  order: 1
+  color: {r: 1, g: 1, b: 1, a: 0.6392157}
+--- !u!114 &1227164549831812827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 34dd40fd6efd417499413e81a9762c3a
+  player: {fileID: 0}
+  position: {x: -242.40005, y: 264}
+  description: 
+  children:
+  - {fileID: 1279089477344075513}
+  - {fileID: -3527308587641732102}
+  successType: 1
 --- !u!114 &1279089477344075513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,9 +420,9 @@ MonoBehaviour:
   started: 0
   guid: 557a8a1c07563a3448561f15c8c0a76b
   player: {fileID: 0}
-  position: {x: -83.540634, y: 288}
+  position: {x: -317.60016, y: 409.60007}
   description: 1 is active 0 is inactive
-  setActive: 0
+  setActive: 1
 --- !u!114 &1729900390672464412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +439,7 @@ MonoBehaviour:
   started: 0
   guid: 0510bda0be297a0429d368428d219d15
   player: {fileID: 0}
-  position: {x: -468.00012, y: 287.99988}
+  position: {x: -392.80005, y: 288}
   description: 
   duration: 1
 --- !u!114 &2402683315043235535
@@ -364,11 +479,30 @@ MonoBehaviour:
   started: 0
   guid: 82f68130de3ac6a488d16d471b3b4d00
   player: {fileID: 0}
-  position: {x: -989.6001, y: 287.99988}
+  position: {x: -998.8522, y: 322.00006}
   description: 
   pointWays:
-  - {x: 16, y: 0}
+  - {x: 20, y: 0}
   velocity: 10
+--- !u!114 &2652142262701977821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2395168993f7d1640a5018cbc69b5087, type: 3}
+  m_Name: ColliderSettingNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 16f2ee66d3dd63243a4d1b2777f8603e
+  player: {fileID: 0}
+  position: {x: -855.33936, y: 461.20004}
+  description: 1 is active 0 is inactive
+  setActive: 0
 --- !u!114 &2839988878540986774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,7 +547,7 @@ MonoBehaviour:
   started: 0
   guid: d89520fb95981ef4695c7572337caf89
   player: {fileID: 0}
-  position: {x: 167.20068, y: 186.79997}
+  position: {x: 256.79993, y: 142.8}
   description: 
   child: {fileID: 2402683315043235535}
 --- !u!114 &5006706167039092810
@@ -470,3 +604,25 @@ MonoBehaviour:
   - {fileID: -4593893612328789320}
   - {fileID: -6461291585671991470}
   - {fileID: 2839988878540986774}
+--- !u!114 &7957742063383468360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b2cb70969e6bd97418eb7ec636b59803
+  player: {fileID: 0}
+  position: {x: -1305.6517, y: 232.80002}
+  description: 
+  children:
+  - {fileID: 143435064029844156}
+  - {fileID: -9191433563325063960}
+  successType: 1

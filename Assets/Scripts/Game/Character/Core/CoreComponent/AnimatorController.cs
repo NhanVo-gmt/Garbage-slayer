@@ -10,6 +10,7 @@ public class AnimatorController : CoreComponent
     public Action onAnimationFinishTrigger;
 
     Health health;
+    SpriteRenderer sprite;
 
     Animator anim;
     BlinkingEffect blinkingEffect;
@@ -20,6 +21,7 @@ public class AnimatorController : CoreComponent
         base.Awake();
         
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         blinkingEffect = GetComponent<BlinkingEffect>();
         flashingEffect = GetComponent<FlashingEffect>();
     }
@@ -70,6 +72,32 @@ public class AnimatorController : CoreComponent
         if (flashingEffect == null) return;
 
         flashingEffect.StartFlashing();
+    }
+
+#endregion
+
+#region Spritre
+
+    public void SetColor(Color newColor)
+    {
+        sprite.color = newColor;
+    }
+
+    public void SetNormalColor()
+    {
+        sprite.color = Color.white;
+    }
+
+    public void SetSorting(string layerName, int order)
+    {
+        sprite.sortingLayerName = layerName;
+        sprite.sortingOrder = order;
+    }
+
+    public void SetToInstance()
+    {
+        sprite.sortingLayerName = "Instance";
+        sprite.sortingOrder = -1;
     }
 
 #endregion

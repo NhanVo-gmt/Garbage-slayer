@@ -9,6 +9,7 @@ public class EnemyData : ScriptableObject
 
     public bool isFlying;
     public bool isFalling;
+    public bool isBoss = false;
 
     public MeleeAttackData meleeAttackData;
     public RangeAttackData rangeAttackData;

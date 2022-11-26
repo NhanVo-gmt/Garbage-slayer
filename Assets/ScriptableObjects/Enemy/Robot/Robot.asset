@@ -15,6 +15,7 @@ MonoBehaviour:
   healthData: {fileID: 11400000, guid: 4bb353556b629ca408b8162380ace366, type: 2}
   isFlying: 0
   isFalling: 0
+  isBoss: 1
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}
   knockbackType: 0
