@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59195fcfddb254f4fa28cff3fde804bc, type: 3}
   m_Name: JumpData
   m_EditorClassIdentifier: 
-  velocity: 6
+  velocity: 8
   jumpVFX: {fileID: 11400000, guid: 7c290ae55881a3a448bcdaf337e90d1d, type: 2}

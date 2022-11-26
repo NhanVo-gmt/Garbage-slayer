@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Combat combat;
     Movement movement;
     Health health;
-    SpawnObjectController vfx;
+    SpawnObjectController spawnObjectController;
     PooledObject pooledObject;
     public BehaviourTreeComponent treeComponent {get; private set;}
 
@@ -71,7 +71,7 @@ public class Enemy : MonoBehaviour
         combat = core.GetCoreComponent<Combat>();
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
-        vfx = core.GetCoreComponent<SpawnObjectController>();
+        spawnObjectController = core.GetCoreComponent<SpawnObjectController>();
 
         SetUpComponent();
     }
@@ -122,12 +122,27 @@ public class Enemy : MonoBehaviour
         if (other.collider.CompareTag("Ground"))
         {
             Die();
+
+            if (data.isToxic)
+            {
+                SpawnToxic();
+            }
         }
+    }
+
+    private void SpawnToxic()
+    {
+        Vector2 spawnPos = new Vector2(transform.position.x, -4.2f);
+        spawnObjectController.SpawnGameObject(data.toxic, spawnPos);
     }
 
     void Die() 
     {
-        pooledObject.Release();
+        if (pooledObject != null)
+        {
+            pooledObject.Release();
+        }
+        
         tree.Reset();
     }
 

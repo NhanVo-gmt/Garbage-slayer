@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4549406366897756158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4952a23ee1ad98442bdd4806162929a1, type: 3}
+  m_Name: FlyToPlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b9e139e0fee73874daaa1cdd807040b4
+  player: {fileID: 0}
+  position: {x: 197.59999, y: 63.01747}
+  description: 
+  velocity: 6
+--- !u!114 &-4328705214213370836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70733bb26462ae4aa3c3dd3641cdf82, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 941fbf17e56288a42884728259761861
+  player: {fileID: 0}
+  position: {x: 197.71373, y: -117.91043}
+  description: 
+  child: {fileID: -4549406366897756158}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c81d3d3d1e29dc40a60e4fc0e658eb8, type: 3}
+  m_Name: HumanBullet
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -4328705214213370836}
+  treeState: 0
+  nodes:
+  - {fileID: -4328705214213370836}
+  - {fileID: -4549406366897756158}
+  offset: {x: 300, y: 0}

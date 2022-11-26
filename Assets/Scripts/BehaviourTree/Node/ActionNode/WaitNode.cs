@@ -33,6 +33,7 @@ public class WaitNode : ActionNode
 
     protected override void OnStop()
     {
+        base.OnStop();
     }
 
     protected override State OnUpdate()

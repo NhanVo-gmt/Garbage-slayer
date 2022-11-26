@@ -7,6 +7,7 @@ public class Movement : CoreComponent
     public Rigidbody2D rb {get; private set;} 
     public Vector2 faceDirection {get; private set;}
 
+    float slowFactor = 1;
     bool canSetVelocity = true;
     float gravityScale;
 
@@ -28,6 +29,16 @@ public class Movement : CoreComponent
 
     #region Velocity
 
+    public void SlowDown()
+    {
+        slowFactor = 0.5f;
+    }
+
+    public void MoveNormal()
+    {
+        slowFactor = 1f;
+    }
+
     public void SetVelocity(Vector2 velocity, bool needToChangeFaceDirection = true) 
     {
         if (needToChangeFaceDirection)
@@ -37,7 +48,7 @@ public class Movement : CoreComponent
 
         if (!canSetVelocity) return;
 
-        rb.velocity = velocity;
+        rb.velocity = velocity * slowFactor;
     }
 
     public void SetVelocityX(float xVelocity, bool needToChangeFaceDirection = true)
@@ -49,7 +60,7 @@ public class Movement : CoreComponent
 
         if (!canSetVelocity) return;
         
-        rb.velocity = new Vector2(xVelocity, rb.velocity.y);
+        rb.velocity = new Vector2(xVelocity * slowFactor, rb.velocity.y);
     }
 
     public void SetVelocityY(float yVelocity) 

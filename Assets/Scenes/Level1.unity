@@ -2944,9 +2944,11 @@ MonoBehaviour:
   - {fileID: 2036799256}
   - {fileID: 2119857012}
   timeToDecreaseRate: 4
-  timeToStopSpawnEnemy: 10
+  timeToDecreaseRate2: 10
+  timeToStopSpawnEnemy: 18
   boss: {fileID: 1757440537}
-  timeToSpawnBoss: 8
+  healthBoss: {fileID: 1770431995}
+  timeToSpawnBoss: 16
 --- !u!4 &561263735
 Transform:
   m_ObjectHideFlags: 0
@@ -3723,8 +3725,27 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 324997504109982533, guid: 88dd8e9ce26a5604ab2c30a8fd4e0f18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052730234446394747, guid: 88dd8e9ce26a5604ab2c30a8fd4e0f18, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bf0eeed4b173ada47b776dfd1bae7454, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88dd8e9ce26a5604ab2c30a8fd4e0f18, type: 3}
+--- !u!114 &1770431995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 324997504426066449, guid: 88dd8e9ce26a5604ab2c30a8fd4e0f18, type: 3}
+  m_PrefabInstance: {fileID: 1770431994}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385d0cfede973334ca3d1dc2691a7d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1907508823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4062,7 +4083,7 @@ MonoBehaviour:
   spawnedEnemy:
   - {fileID: 8530503817077113142, guid: d5f17f10efce89f4f9426ef030fbf587, type: 3}
   - {fileID: 8530503817077113142, guid: a7e3fb71c953c6a4c824ee71e63398ad, type: 3}
-  spawnRate: 2
+  spawnRate: 3
 --- !u!4 &2119857013
 Transform:
   m_ObjectHideFlags: 0

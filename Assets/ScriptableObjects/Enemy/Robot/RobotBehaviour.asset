@@ -83,7 +83,7 @@ MonoBehaviour:
   children:
   - {fileID: -8675846431988645619}
   - {fileID: 2900835920888501695}
-  successType: 0
+  successType: 1
 --- !u!114 &-6461291585671991470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
   started: 0
   guid: dd503ab7391e98a41abbd26394d8b992
   player: {fileID: 0}
-  position: {x: 458.4, y: 605.70123}
+  position: {x: 458.4001, y: 605.60004}
   description: Shoot 3 shot
   gameObjectList:
   - {fileID: 8530503817077113142, guid: f784bc3b1a4ab0041a3e5925a439ae9c, type: 3}
@@ -574,8 +574,8 @@ MonoBehaviour:
   position: {x: 121.600006, y: 288}
   description: 
   shakeDuration: 1
-  shakeAmount: 5
-  frequency: 5
+  shakeAmount: 6
+  frequency: 2
 --- !u!114 &2905457997363004854
 MonoBehaviour:
   m_ObjectHideFlags: 0

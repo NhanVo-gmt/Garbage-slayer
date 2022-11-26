@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DashData
   m_EditorClassIdentifier: 
   initialVelocity: 8
-  cooldown: 0.5
+  cooldown: 0.7
   vfx: {fileID: 11400000, guid: 68b540c6821f8614a9b5e486633a6717, type: 2}

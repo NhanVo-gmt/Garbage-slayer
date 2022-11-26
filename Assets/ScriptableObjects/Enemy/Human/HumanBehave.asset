@@ -1,0 +1,231 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7781222804726991177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a5751cea31723b64999070cf6fb20f55
+  player: {fileID: 0}
+  position: {x: 479.9999, y: 366.23752}
+  description: 
+  children:
+  - {fileID: 566683877376707964}
+  - {fileID: -2733278168538123690}
+--- !u!114 &-7370706155504597391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ec9264723b60a4abe124bb7aa4bb72, type: 3}
+  m_Name: PatrolNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 02d91cd15ed5c0e4a9fe6a5ef94d585f
+  player: {fileID: 0}
+  position: {x: -39.72261, y: 272.8}
+  description: 
+  pointWays:
+  - {x: -7, y: 0}
+  velocity: 3
+--- !u!114 &-7226554123234846666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee9835a4cb7ebc458dd76457b13aff2, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e8ddfc76802f0d7419090504f556ce67
+  player: {fileID: 0}
+  position: {x: 480, y: 252.60004}
+  description: 
+  child: {fileID: -7781222804726991177}
+--- !u!114 &-4328705214213370836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70733bb26462ae4aa3c3dd3641cdf82, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 941fbf17e56288a42884728259761861
+  player: {fileID: 0}
+  position: {x: 197.71373, y: -117.91043}
+  description: 
+  child: {fileID: 5197646057463280440}
+--- !u!114 &-2733278168538123690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879830d87be40f64dabc011e8c09fd7f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: e15f16aaca0bcf045a336a158639daa2
+  player: {fileID: 0}
+  position: {x: 598.1225, y: 474.8}
+  description: 
+  duration: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c81d3d3d1e29dc40a60e4fc0e658eb8, type: 3}
+  m_Name: HumanBehave
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -4328705214213370836}
+  treeState: 0
+  nodes:
+  - {fileID: -4328705214213370836}
+  - {fileID: 5197646057463280440}
+  - {fileID: 4036779578730293676}
+  - {fileID: -7370706155504597391}
+  - {fileID: 2903220543800807953}
+  - {fileID: 4580612612795364453}
+  - {fileID: -7226554123234846666}
+  - {fileID: -2733278168538123690}
+  - {fileID: -7781222804726991177}
+  - {fileID: 566683877376707964}
+  offset: {x: 300, y: 0}
+--- !u!114 &566683877376707964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b24ce766313c2ad4ea405b2b76fac4ad, type: 3}
+  m_Name: ThrowNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7378d2d011a8d61468bb8226567a3510
+  player: {fileID: 0}
+  position: {x: 379.40204, y: 475.19998}
+  description: 
+  gameObjectList:
+  - {fileID: 3794366504767506519, guid: 6336a9b5a71afff44945a44c859044dd, type: 3}
+  - {fileID: 3794366504767506519, guid: 2c9cc2d9b93a12e409220920308727d4, type: 3}
+  - {fileID: 3794366504767506519, guid: 0c8d3e010ffe0ea4492ec7cda1693621, type: 3}
+  spawnPosition: {x: -6.5, y: 5}
+--- !u!114 &2903220543800807953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879830d87be40f64dabc011e8c09fd7f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 048ba8b6a26a5314680e876ff2e217b6
+  player: {fileID: 0}
+  position: {x: 156.39998, y: 272.8}
+  description: 
+  duration: 1
+--- !u!114 &4036779578730293676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 28e689d63921e6145bfcd207ef283278
+  player: {fileID: 0}
+  position: {x: 47.19995, y: 126.837555}
+  description: Phase 1
+  children:
+  - {fileID: -7370706155504597391}
+  - {fileID: 2903220543800807953}
+--- !u!114 &4580612612795364453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ad1da294dec063b4bb0c7943c337ea79
+  player: {fileID: 0}
+  position: {x: 413.50003, y: 127.199974}
+  description: Phase 2
+  children:
+  - {fileID: -7226554123234846666}
+--- !u!114 &5197646057463280440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0427f67b72d82804a985eb3af791f280
+  player: {fileID: 0}
+  position: {x: 197.60016, y: -5.385002}
+  description: 
+  children:
+  - {fileID: 4036779578730293676}
+  - {fileID: 4580612612795364453}

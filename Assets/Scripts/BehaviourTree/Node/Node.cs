@@ -51,8 +51,8 @@ public abstract class Node : ScriptableObject
 
     public virtual void Abort()
     {
-        OnStop();
         started = false;
+        OnStop();
         state = State.FAILURE;
     }
 

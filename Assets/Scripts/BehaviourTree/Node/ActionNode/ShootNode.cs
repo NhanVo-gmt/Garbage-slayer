@@ -100,7 +100,7 @@ public class ShootNode : ActionNode
 
     protected override void AnimationTrigger()
     {
-        Shoot();
+    
     }
 
     protected override void AnimationFinishTrigger()

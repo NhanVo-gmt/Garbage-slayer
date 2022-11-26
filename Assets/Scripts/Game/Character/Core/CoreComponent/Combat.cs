@@ -156,4 +156,14 @@ public class Combat : CoreComponent, IDamageable
     
 
     #endregion
+
+    public void SlowDown()
+    {
+        movement.SlowDown();
+    }
+
+    public void MoveNormal()
+    {
+        movement.MoveNormal();
+    }
 }

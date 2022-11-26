@@ -123,4 +123,11 @@ public class Player : MonoBehaviour
 
     #endregion
 
+    private void OnTriggerStay2D(Collider2D other) {
+        if (stateMachine.currentState == dashState && other.TryGetComponent<Acid>(out Acid acid))
+        {
+            acid.Release();
+        }
+    }
+
 }

@@ -12,13 +12,14 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField] GameObject[] spawnedEnemy;
-    [SerializeField] public float spawnRate;
+    [SerializeField] float spawnRate;
+    [SerializeField] float spawnTime = 0f;
 
     void Start() 
     {
         poolingManager = FindObjectOfType<ObjectPooling>();
         
-        InvokeRepeating("SpawnPooledPrefab", 0f, spawnRate);
+        InvokeRepeating("SpawnPooledPrefab", spawnTime, spawnRate);
     }
     
     public GameObject SpawnPooledPrefab()
@@ -51,6 +52,13 @@ public class EnemySpawner : MonoBehaviour
     void SetParent(GameObject spawnedObject)
     {
         spawnedObject.transform.SetParent(transform);
+    }
+
+    public void DecreaseSpawnRate(float decreaseRate)
+    {
+        spawnRate -= decreaseRate;
+        CancelInvoke();
+        InvokeRepeating("SpawnPooledPrefab", 0f, spawnRate);
     }
 
     private void OnDrawGizmosSelected() {
