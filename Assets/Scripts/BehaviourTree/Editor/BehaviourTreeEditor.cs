@@ -94,11 +94,11 @@ public class BehaviourTreeEditor : EditorWindow
                 }
 
                 //todo
-                Enemy enemy = Selection.activeGameObject.GetComponent<Enemy>();
-                if (enemy)
-                {
-                    tree = enemy.tree;
-                }
+                // Enemy enemy = Selection.activeGameObject.GetComponent<Enemy>();
+                // if (enemy)
+                // {
+                //     tree = enemy.tree;
+                // }
             }
         }
 

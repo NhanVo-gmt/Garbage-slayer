@@ -83,7 +83,7 @@ public class Dialogue : ScriptableObject//ISerializationCallbackReceiver
 
         createNode.rect.position = parent.rect.position + spawnOffset;
 
-        OnValidate();
+        //OnValidate();
     }
 
 
@@ -112,31 +112,31 @@ public class Dialogue : ScriptableObject//ISerializationCallbackReceiver
     }
 
     //todo
-    public void OnBeforeSerialize()
-    {
-        OnValidate();
-    }
+    // public void OnBeforeSerialize()
+    // {
+    //     OnValidate();
+    // }
 
-    void OnValidate()
-    {
-        string path = AssetDatabase.GetAssetPath(this);
-        if (path != "")
-        {
-            foreach(DialogueNode node in nodeList)
-            {
-                if (AssetDatabase.GetAssetPath(node) == "") 
-                {
-                    AssetDatabase.AddObjectToAsset(node, path);
-                    AssetDatabase.SaveAssets();
-                }
-            }
-        }
-    }
+    // void OnValidate()
+    // {
+    //     string path = AssetDatabase.GetAssetPath(this);
+    //     if (path != "")
+    //     {
+    //         foreach(DialogueNode node in nodeList)
+    //         {
+    //             if (AssetDatabase.GetAssetPath(node) == "") 
+    //             {
+    //                 AssetDatabase.AddObjectToAsset(node, path);
+    //                 AssetDatabase.SaveAssets();
+    //             }
+    //         }
+    //     }
+    // }
 
-    public void OnAfterDeserialize()
-    {
+    // public void OnAfterDeserialize()
+    // {
 
-    }
+    // }
 
 
 #endif

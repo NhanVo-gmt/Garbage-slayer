@@ -16,6 +16,8 @@ public class DashState : AbilityState
     {
         base.Enter();
 
+        soundManager.PlayDashClip();
+
         movement.SetVelocityZero();
         movement.SetGravityZero();
 

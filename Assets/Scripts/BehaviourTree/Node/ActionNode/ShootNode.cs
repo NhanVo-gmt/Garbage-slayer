@@ -23,6 +23,7 @@ public class ShootNode : ActionNode
     
     Node.State currentNodeState;
     int shootId = Animator.StringToHash("Shoot");
+    int attackId = Animator.StringToHash("Attack2");
 
     float shootRateTime = 0;
     float shootTime = 0;
@@ -41,6 +42,7 @@ public class ShootNode : ActionNode
     protected override void PlayAnimation()
     {
         anim.Play(shootId);
+        anim.Play(attackId);
     }
     
     protected override void OnStart()

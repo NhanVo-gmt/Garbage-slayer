@@ -9,6 +9,7 @@ public class ThrowNode : ActionNode
     
     [SerializeField] List<GameObject> gameObjectList;
     [SerializeField] Vector2 spawnPosition;
+    [SerializeField] bool needPlayerPosition = false;
     
     State currentNodeState;
 
@@ -49,6 +50,10 @@ public class ThrowNode : ActionNode
 
     private void Shoot()
     {
+        if (needPlayerPosition)
+        {
+            spawnPosition = (Vector2)treeComponent.transform.position + spawnPosition;
+        }
         GameObject projectile = spawnObjectController.SpawnGameObject(gameObjectList[UnityEngine.Random.Range(0, gameObjectList.Count)], spawnPosition);
     }
     

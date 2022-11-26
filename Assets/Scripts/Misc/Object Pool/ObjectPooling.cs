@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class ObjectPooling : MonoBehaviour
+public class ObjectPooling : SingletonObject<ObjectPooling>
 {
     [System.Serializable]
     public class PooledPrefab
@@ -42,8 +42,10 @@ public class ObjectPooling : MonoBehaviour
 
     public List<PooledPrefab> pooledPrefabList = new List<PooledPrefab>();
 
-    void Awake() 
+    protected override void Awake() 
     {
+        base.Awake();
+        
         foreach(PooledPrefab prefab in pooledPrefabList)
         {
             prefab.OnAwake();

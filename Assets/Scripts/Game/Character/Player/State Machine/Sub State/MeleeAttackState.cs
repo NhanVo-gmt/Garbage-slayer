@@ -14,6 +14,8 @@ public class MeleeAttackState : AttackState
     {
         base.Exit();
 
+        soundManager.PlayMeleeClip();
+
         movement.SetVelocityZero();
     }
 

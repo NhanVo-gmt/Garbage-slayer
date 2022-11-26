@@ -20,6 +20,8 @@ public class JumpState : AbilityState
         player.inputManager.UseJumpInput();
         movement.SetVelocityY(data.jumpData.velocity);
 
+        soundManager.PlayJumpClip();
+
         SpawnVFX();
     }
 

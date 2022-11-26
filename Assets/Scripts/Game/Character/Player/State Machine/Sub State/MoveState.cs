@@ -11,6 +11,8 @@ public class MoveState : GroundState
     public override void Enter()
     {
         base.Enter();
+
+        soundManager.PlayMoveClip();
     }
 
 

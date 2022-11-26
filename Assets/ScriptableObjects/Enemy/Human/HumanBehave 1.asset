@@ -144,8 +144,9 @@ MonoBehaviour:
   position: {x: 379.40204, y: 475.19998}
   description: 
   gameObjectList:
-  - {fileID: 8530503817077113142, guid: 892ba2039bad0f04099552abb85f4c91, type: 3}
+  - {fileID: 8530503817077113142, guid: 3fec7bd986f95014397860b2f1f7ddd0, type: 3}
   spawnPosition: {x: 7.3, y: 5}
+  needPlayerPosition: 0
 --- !u!114 &2903220543800807953
 MonoBehaviour:
   m_ObjectHideFlags: 0

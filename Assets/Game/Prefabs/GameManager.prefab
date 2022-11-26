@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3138195836440119357}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -83,6 +83,8 @@ MonoBehaviour:
   - prefab: {fileID: 8530503817077113142, guid: 892ba2039bad0f04099552abb85f4c91, type: 3}
     amountToPool: 3
   - prefab: {fileID: 3534065629125637246, guid: a1e594c163db0ec4fb952116e206cf75, type: 3}
+    amountToPool: 10
+  - prefab: {fileID: 6742628647347456395, guid: 978ecc098a30e974b96ca81d8fe287f4, type: 3}
     amountToPool: 10
 --- !u!114 &3138195836440119352
 MonoBehaviour:

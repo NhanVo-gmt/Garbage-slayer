@@ -24,8 +24,12 @@ public class EnemySpawner : MonoBehaviour
     
     public GameObject SpawnPooledPrefab()
     {   
+        if (poolingManager == null)
+        {
+            poolingManager = FindObjectOfType<ObjectPooling>();
+        }
         GameObject spawnedPrefab = poolingManager.GetObjectFromPool(spawnedEnemy[GetRandomIndex()]);
-        //SetParent(spawnedPrefab);
+        
         SetPrefabPosition(spawnedPrefab);
 
         return spawnedPrefab;

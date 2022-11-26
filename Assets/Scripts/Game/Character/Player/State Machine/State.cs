@@ -9,6 +9,7 @@ public abstract class State
     protected CollisionSenses collisionSenses;
     protected Health health;
     protected SpawnObjectController vfx;
+    protected SoundManager soundManager;
 
 
     protected Player player;
@@ -34,6 +35,7 @@ public abstract class State
         collisionSenses = core.GetCoreComponent<CollisionSenses>();
         health = core.GetCoreComponent<Health>();
         vfx = core.GetCoreComponent<SpawnObjectController>();
+        soundManager = core.GetCoreComponent<SoundManager>();
     }
 
     public virtual void Enter() 

@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = " Behaviour")]
-public class BehaviourTree : ScriptableObject
+public class BehaviourTree : ScriptableObject// ISerializationCallbackReceiver
 {
     public Node rootNode;
     public Node.State treeState = Node.State.RUNNING;
@@ -212,32 +212,32 @@ public class BehaviourTree : ScriptableObject
     }
 
 
-    public void OnBeforeSerialize()
-    {
-        OnValidate();
-    }
+    // public void OnBeforeSerialize()
+    // {
+    //     OnValidate();
+    // }
 
-    private void OnValidate()
-    {
+    // private void OnValidate()
+    // {
 
-        string path = AssetDatabase.GetAssetPath(this);
-        if (path != "")
-        {
-            foreach(Node node in nodes)
-            {
-                if (AssetDatabase.GetAssetPath(node) == "") 
-                {
-                    AssetDatabase.AddObjectToAsset(node, path);
-                    AssetDatabase.SaveAssets();
-                }
-            }
-        }
-    }
+    //     string path = AssetDatabase.GetAssetPath(this);
+    //     if (path != "")
+    //     {
+    //         foreach(Node node in nodes)
+    //         {
+    //             if (AssetDatabase.GetAssetPath(node) == "") 
+    //             {
+    //                 AssetDatabase.AddObjectToAsset(node, path);
+    //                 AssetDatabase.SaveAssets();
+    //             }
+    //         }
+    //     }
+    // }
 
-    public void OnAfterDeserialize()
-    {
+    // public void OnAfterDeserialize()
+    // {
         
-    }
+    // }
     
 #endif
 }

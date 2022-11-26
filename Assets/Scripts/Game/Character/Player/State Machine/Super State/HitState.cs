@@ -15,6 +15,8 @@ public class HitState : State
     {
         base.Enter();
         
+        soundManager.PlayHitClip();
+        
         movement.SetVelocityZero();
     }
 
