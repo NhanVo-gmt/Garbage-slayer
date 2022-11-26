@@ -19,7 +19,7 @@ public class SpawnObjectController : CoreComponent
         movement = core.GetCoreComponent<Movement>();
     }
 
-#region 
+#region Spawn Pooled Prefab
 
     public GameObject SpawnPooledPrefab(PooledObjectData data)
     {
@@ -60,6 +60,23 @@ public class SpawnObjectController : CoreComponent
         {
             spawnedObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+    }
+
+#endregion
+
+#region Spawn Go
+
+public GameObject SpawnGameObject(GameObject prefab, Vector2 position)
+    {
+        GameObject spawnedPrefab = poolingManager.GetObjectFromPool(prefab);
+        SetGameObjectPosition(spawnedPrefab, position);
+
+        return spawnedPrefab;
+    }
+
+    void SetGameObjectPosition(GameObject spawnedObject, Vector2 position)
+    { 
+        spawnedObject.transform.position = position;
     }
 
 #endregion

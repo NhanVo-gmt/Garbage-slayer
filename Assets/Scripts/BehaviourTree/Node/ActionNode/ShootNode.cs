@@ -1,41 +1,40 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootNode : ActionNode
 {
-    public enum MoveDirection
+    public enum ShotType
     {
-        Horizontal,
-        Vertical,
-        Diagonal,
-        TowardsPlayer
-    }
-
-    public enum MoveEffect
-    {
-        None,
-        Homing
+        OneDirectionShot,
+        AllDirectionShot
     }
 
     protected SpawnObjectController spawnObjectController { get => _spawnObjectController ??= treeComponent.core.GetCoreComponent<SpawnObjectController>(); }
     private SpawnObjectController _spawnObjectController;
     
-    [SerializeField] Projectile projectile;
-    [SerializeField] MoveDirection direction;
-    [SerializeField] MoveEffect effect;
+    [SerializeField] List<GameObject> gameObjectList;
+    [SerializeField] Vector2[] spawnPosition;
+    [SerializeField] ShotType shotType;
+    [SerializeField] float shootRate;
+    [SerializeField] float duration;
+    [SerializeField] int numberEachTime = 1;
 
     
     Node.State currentNodeState;
     int shootId = Animator.StringToHash("Shoot");
 
-    
+    float shootRateTime = 0;
+    float shootTime = 0;
+
     public override void CopyNode(ActionNode copyNode)
     {
         ShootNode node = copyNode as ShootNode;
         if (node)
         {
             description = node.description;
-            projectile = node.projectile;
+            gameObjectList = node.gameObjectList;
+            spawnPosition = node.spawnPosition;
         }
     }
 
@@ -49,12 +48,32 @@ public class ShootNode : ActionNode
         base.OnStart();
         
         currentNodeState = State.RUNNING;
+        shootRateTime = 0;
+        shootTime = Time.time;
     }
 
     private void Shoot()
     {
-        Projectile projectile = spawnObjectController.SpawnPooledPrefab(treeComponent.data.rangeAttackData.projectileData).GetComponent<Projectile>();
-        projectile.Initialize(treeComponent.data.rangeAttackData.projectileData, Vector2.left); //todo
+        switch(shotType)
+        {
+            case ShotType.OneDirectionShot:
+            {
+                for (int i = 0; i < numberEachTime; i++)
+                {
+                    GameObject projectile = spawnObjectController.SpawnGameObject(gameObjectList[UnityEngine.Random.Range(0, gameObjectList.Count)], spawnPosition[0]);
+                }
+                break;
+            }
+            case ShotType.AllDirectionShot:
+            {
+                for (int i = 0; i < spawnPosition.Length; i++)
+                {
+                    GameObject projectile = spawnObjectController.SpawnGameObject(gameObjectList[UnityEngine.Random.Range(0, gameObjectList.Count)], spawnPosition[i]);
+                }
+                break;
+            }
+        }
+        shootRateTime = Time.time;
     }
 
     protected override void OnStop()
@@ -64,6 +83,16 @@ public class ShootNode : ActionNode
 
     protected override State OnUpdate()
     {
+        if (shootRateTime + shootRate <= Time.time)
+        {
+            Shoot();
+        }
+
+        if (shootTime + duration <= Time.time)
+        {
+            return State.SUCCESS;
+        }
+
         return currentNodeState;
     }
     

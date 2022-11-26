@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class RandomVelocityNode : ActionNode
 {
-    [SerializeField] float velocity;
+    [SerializeField] Vector2 velocityX;
+    [SerializeField] Vector2 velocityY;
+
+    Vector2 velocity;
     
     public override void CopyNode(ActionNode copyNode)
     {
@@ -18,6 +21,7 @@ public class RandomVelocityNode : ActionNode
         base.OnStart();
 
         velocity = RandomVelocity();
+        movement.SetVelocityY(velocity.y);
     }
 
     protected override void OnStop()
@@ -36,12 +40,12 @@ public class RandomVelocityNode : ActionNode
     {
         if (!treeComponent.data.isFlying)
         {
-            movement.SetVelocityX(velocity);
+            movement.SetVelocityX(velocity.x);
         }
     }
 
-    float RandomVelocity() 
+    Vector2 RandomVelocity() 
     {
-        return Random.Range(-velocity, velocity);
+        return new Vector2(Random.Range(velocityX.x, velocityX.y), Random.Range(velocityY.x, velocityY.y));
     }
 }

@@ -75,7 +75,14 @@ public class PatrolNode : ActionNode
     {
         MoveToNextPoint();
         
-        if (Mathf.Abs(Vector2.SqrMagnitude((Vector2)treeComponent.transform.position - pointWays[currentIndex])) < 0.5f)
+        if (!treeComponent.data.isFlying)
+        {   
+            if (Mathf.Abs(treeComponent.transform.position.x - pointWays[currentIndex].x) < 0.5f)
+            {
+                return State.SUCCESS;
+            }
+        }
+        else if (Mathf.Abs(Vector2.SqrMagnitude((Vector2)treeComponent.transform.position - pointWays[currentIndex])) < 0.5f)
         {
             return State.SUCCESS;
         }

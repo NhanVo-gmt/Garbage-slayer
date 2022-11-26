@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Scene1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a4485136aacabbe4ea6e496b757e63b7, type: 3}
+    - {fileID: 2800000, guid: 9e4e7615935f10e4eb6e6d46a38e3d31, type: 3}
+    - {fileID: 2800000, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 9e4e7615935f10e4eb6e6d46a38e3d31, type: 3}
+  - {fileID: 21300000, guid: a4485136aacabbe4ea6e496b757e63b7, type: 3}
+  - {fileID: 1315333775, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -1939884612, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -485159111, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -1088053693, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -295605123, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 861297894, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 1117501617, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 261642235, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 586527431, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 1225302386, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 1516138817, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -1611218149, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 2126505323, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -547439167, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: 172312266, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  - {fileID: -2092212805, guid: 5e14d99f59b2ee4418619ed316ad3d70, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - background2
+  - background1
+  - recycle_items_7
+  - recycle_items_4
+  - recycle_items_5
+  - recycle_items_2
+  - recycle_items_3
+  - recycle_items_0
+  - recycle_items_1
+  - recycle_items_15
+  - recycle_items_14
+  - recycle_items_11
+  - recycle_items_10
+  - recycle_items_13
+  - recycle_items_12
+  - recycle_items_8
+  - recycle_items_9
+  - recycle_items_6
+  m_RenderDataMap: {}
+  m_Tag: Scene1
+  m_IsVariant: 0
