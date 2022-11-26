@@ -110,10 +110,7 @@ public class Enemy : MonoBehaviour
             target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero);
             Die();
         }
-        else if (other.GetComponent<Player>() != null)
-        {
-            Die();
-        }
+        
     }
 
     void Die() 

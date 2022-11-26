@@ -1475,7 +1475,7 @@ GameObject:
   - component: {fileID: 8446014628766348951}
   - component: {fileID: 4589106953844015005}
   - component: {fileID: 4788616895650202808}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
