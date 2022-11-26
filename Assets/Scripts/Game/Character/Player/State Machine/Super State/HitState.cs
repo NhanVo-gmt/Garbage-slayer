@@ -28,14 +28,6 @@ public class HitState : State
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
-
-        if (!collisionSenses.isGround)
-        {
-            stateMachine.ChangeState(player.inAirState);
-        }
-        else
-        {
-            stateMachine.ChangeState(player.idleState);
-        }
+        stateMachine.ChangeState(player.idleState);
     }
 }

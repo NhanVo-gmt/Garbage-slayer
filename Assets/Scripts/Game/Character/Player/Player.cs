@@ -7,11 +7,8 @@ public class Player : MonoBehaviour
 {
     #region State
 
-    public DashState dashState {get; private set;}
     public IdleState idleState {get; private set;}
-    public InAirState inAirState {get; private set;}
     public HitState hitState {get; private set;}
-    public JumpState jumpState {get; private set;}
     public MoveState moveState {get; private set;}
     public MeleeAttackState meleeAttackState {get; private set;}
 
@@ -19,19 +16,10 @@ public class Player : MonoBehaviour
 
     #region Animation Clip Data
 
-    int dashId = Animator.StringToHash("Dash");
     int idleId = Animator.StringToHash("Idle");
-    int inAirId = Animator.StringToHash("In Air");
-    int hitId = Animator.StringToHash("Hit");
-    int jumpId = Animator.StringToHash("Jump");
     int meleeAttackId = Animator.StringToHash("Melee Attack");
     int moveId = Animator.StringToHash("Move");
-
-    #endregion
-
-    #region Core Component
-
-    InteractionController interactionController;
+    int hitId = Animator.StringToHash("Hit");
 
     #endregion
 
@@ -61,19 +49,14 @@ public class Player : MonoBehaviour
     {
         stateMachine = new StateMachine();
         
-        dashState = new DashState(this, core, stateMachine, data, dashId);
-        idleState = new IdleState(this, core, stateMachine, data, idleId);
-        inAirState = new InAirState(this, core, stateMachine, data, inAirId);
         hitState = new HitState(this, core, stateMachine, data, hitId);
-        jumpState = new JumpState(this, core, stateMachine, data, jumpId);
+        idleState = new IdleState(this, core, stateMachine, data, idleId);
         moveState = new MoveState(this, core, stateMachine, data, moveId);
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
     }
 
     void GetCoreComponent()
     {
-        interactionController = core.GetCoreComponent<InteractionController>();
-        
         SetUpCombatComponent(core.GetCoreComponent<Combat>());
         SetUpHealthComponent(core.GetCoreComponent<Health>());
         SetUpRecoveryComponent(core.GetCoreComponent<RecoveryController>());
@@ -105,34 +88,6 @@ public class Player : MonoBehaviour
     {
         stateMachine.FixedUpdate();
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        SetConversation(other);
-    }
-
-    private void OnTriggerExit2D(Collider2D other) {
-        UnsetConversation(other);
-    }
-
-    private void SetConversation(Collider2D other)
-    {
-        DialogueHolder npcDialogue = other.GetComponent<DialogueHolder>();
-        if (npcDialogue != null)
-        {
-            interactionController.SetDialogue(npcDialogue.GetDialogue());
-        }
-    }
-
-    private void UnsetConversation(Collider2D other)
-    {
-        DialogueHolder npcDialogue = other.GetComponent<DialogueHolder>();
-        if (npcDialogue != null)
-        {
-            interactionController.UnsetDialogue(npcDialogue.GetDialogue());
-        }
-    }
-
 
     #region Get 
 

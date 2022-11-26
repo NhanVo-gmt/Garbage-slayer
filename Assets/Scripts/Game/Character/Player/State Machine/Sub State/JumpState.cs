@@ -44,7 +44,7 @@ public class JumpState : AbilityState
         }
         else
         {
-            stateMachine.ChangeState(player.inAirState);
+            //stateMachine.ChangeState(player.inAirState);
         }
     }
 

@@ -49,25 +49,25 @@ public class DashState : AbilityState
     {
         base.LogicsUpdate();
 
-        if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
-        {
-            if (collisionSenses.isGround)
-            {
-                stateMachine.ChangeState(player.moveState);
-            }
-            else
-            {
-                stateMachine.ChangeState(player.inAirState);
-            }
-        }
-        else if (player.inputManager.jumpInput && collisionSenses.isGround)
-        {
-            stateMachine.ChangeState(player.jumpState);
-        }
-        else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
-        {
-            stateMachine.ChangeState(player.meleeAttackState);
-        }
+        // if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
+        // {
+        //     if (collisionSenses.isGround)
+        //     {
+        //         stateMachine.ChangeState(player.moveState);
+        //     }
+        //     else
+        //     {
+        //         stateMachine.ChangeState(player.inAirState);
+        //     }
+        // }
+        // else if (player.inputManager.jumpInput && collisionSenses.isGround)
+        // {
+        //     stateMachine.ChangeState(player.jumpState);
+        // }
+        // else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
+        // {
+        //     stateMachine.ChangeState(player.meleeAttackState);
+        // }
     }
 
     public override void AnimationFinishTrigger()
