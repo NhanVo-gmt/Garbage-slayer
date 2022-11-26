@@ -75,5 +75,5 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: 197.59991, y: 123.63505}
   description: 
-  velocity: 0
+  velocity: 2
   stoppingDistance: 0

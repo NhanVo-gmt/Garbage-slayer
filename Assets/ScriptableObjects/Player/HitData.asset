@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: HitData
   m_EditorClassIdentifier: 
   blinkCooldown: 0
-  invulnerableTime: 0
+  invulnerableTime: 0.5
