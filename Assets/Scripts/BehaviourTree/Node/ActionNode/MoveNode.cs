@@ -53,6 +53,8 @@ public class MoveNode : ActionNode
 
     protected override void PlayAnimation()
     {
+        base.PlayAnimation();
+        
         anim.Play(moveId);
     }
     

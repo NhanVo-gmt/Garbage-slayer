@@ -15,8 +15,8 @@ MonoBehaviour:
   damage: 1
   coolDown: 0.3
   vfx: {fileID: 11400000, guid: e34c0fdd7d2f41b4bb96dc5cec99e587, type: 2}
-  leftAttackPos: {x: -0.7, y: -0.1}
-  rightAttackPos: {x: 0.7, y: -0.1}
+  leftAttackPos: {x: -0.85, y: -0.1}
+  rightAttackPos: {x: 0.85, y: -0.1}
   upAttackPos: {x: 0, y: 0}
   downAttackPos: {x: 0, y: 0}
   radius: 0.5

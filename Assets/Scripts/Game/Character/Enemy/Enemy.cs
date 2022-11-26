@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     Movement movement;
     Health health;
     SpawnObjectController vfx;
+    PooledObject pooledObject;
     public BehaviourTreeComponent treeComponent {get; private set;}
 
     Collider2D col;
@@ -51,6 +52,8 @@ public class Enemy : MonoBehaviour
         GetCoreComponent();
 
         InitializeTreeNodeComponent();
+
+        pooledObject = GetComponent<PooledObject>();
     }
 
     private void OnEnable() {
@@ -115,6 +118,8 @@ public class Enemy : MonoBehaviour
 
     void Die() 
     {
-        Destroy(gameObject);
+        pooledObject.Release();
     }
+
+
 }
