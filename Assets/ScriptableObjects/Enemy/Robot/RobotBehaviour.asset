@@ -62,6 +62,28 @@ MonoBehaviour:
   description: second stage
   children:
   - {fileID: 2905457997363004854}
+--- !u!114 &-7979657087969337930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 77213e7657718db459cf72156cdd8509
+  player: {fileID: 0}
+  position: {x: -17.009888, y: 172.4066}
+  description: 
+  children:
+  - {fileID: -8675846431988645619}
+  - {fileID: 2900835920888501695}
+  successType: 0
 --- !u!114 &-6461291585671991470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +217,7 @@ MonoBehaviour:
   - {fileID: -878754188583632303}
   - {fileID: 1729900390672464412}
   - {fileID: 1227164549831812827}
-  - {fileID: -8675846431988645619}
+  - {fileID: -7979657087969337930}
 --- !u!114 &-1159817770528626720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +340,8 @@ MonoBehaviour:
   - {fileID: 2652142262701977821}
   - {fileID: 967158682434255619}
   - {fileID: 585424504379853891}
+  - {fileID: -7979657087969337930}
+  - {fileID: 2900835920888501695}
   offset: {x: 300, y: 0}
 --- !u!114 &143435064029844156
 MonoBehaviour:
@@ -398,7 +422,7 @@ MonoBehaviour:
   started: 0
   guid: 34dd40fd6efd417499413e81a9762c3a
   player: {fileID: 0}
-  position: {x: -242.40005, y: 264}
+  position: {x: -223.16093, y: 288}
   description: 
   children:
   - {fileID: 1279089477344075513}
@@ -531,6 +555,27 @@ MonoBehaviour:
   shootRate: 1
   duration: 1
   numberEachTime: 3
+--- !u!114 &2900835920888501695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e0fafb4cb4cc94b91a39a29155d3c8, type: 3}
+  m_Name: CameraShakeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 79911c25e765c6d48b0394b29dcacae4
+  player: {fileID: 0}
+  position: {x: 121.600006, y: 288}
+  description: 
+  shakeDuration: 1
+  shakeAmount: 5
+  frequency: 5
 --- !u!114 &2905457997363004854
 MonoBehaviour:
   m_ObjectHideFlags: 0
