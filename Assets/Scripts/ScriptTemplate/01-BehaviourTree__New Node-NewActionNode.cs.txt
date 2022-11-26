@@ -1,0 +1,30 @@
+using UnityEngine;
+
+public class #SCRIPTNAME# : ActionNode
+{
+    public override void CopyNode(ActionNode copyNode)
+    {
+        #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
+        if (node)
+        {
+            description = node.description;
+        }
+    }
+    
+    protected override void OnStart()
+    {
+        base.OnStart();
+    }
+
+    protected override void OnStop()
+    {
+        base.OnStop();
+    }
+
+    protected override State OnUpdate()
+    {
+        return State.SUCCESS;
+    }
+    #NOTRIM#
+
+}
