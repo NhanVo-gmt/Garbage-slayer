@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/StyleSheet/Main%20menu%20button%20style.uss?fileID=7433441132597879392&amp;guid=64bd1437c5cb6ac43aba0450c4d1e27e&amp;type=3#Main menu button style" />
+    <ui:VisualElement name="Background" style="height: 726px; flex-grow: 1; -unity-text-align: upper-left; align-items: center;">
+        <ui:VisualElement style="height: 640px; width: 522px; left: auto; position: relative; align-items: center; justify-content: center; flex-grow: 1; flex-shrink: 1; -unity-text-align: upper-center;">
+            <ui:Button text="Start" display-tooltip-when-elided="true" name="StartButton" class="main-menu-button-style" style="position: relative; top: auto; left: auto;" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="QuitButton" class="main-menu-button-style" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

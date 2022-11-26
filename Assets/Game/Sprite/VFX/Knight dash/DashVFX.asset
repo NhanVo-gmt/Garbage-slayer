@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DashVFX
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 6324686794467727276, guid: 7e9db0e319699f84e89eb3ad1d04bcf5, type: 3}
-  needPlayerDirection: 0
+  needPlayerDirection: 1
   spawnPos: {x: 0, y: 0}
   lifeTime: 1

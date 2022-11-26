@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     #region State
 
     public IdleState idleState {get; private set;}
+    public DashState dashState {get; private set;}
     public HitState hitState {get; private set;}
     public MoveState moveState {get; private set;}
     public MeleeAttackState meleeAttackState {get; private set;}
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     #region Animation Clip Data
 
     int idleId = Animator.StringToHash("Idle");
+    int dashId = Animator.StringToHash("Dash");
     int meleeAttackId = Animator.StringToHash("Melee Attack");
     int moveId = Animator.StringToHash("Move");
     int hitId = Animator.StringToHash("Hit");
@@ -49,8 +51,9 @@ public class Player : MonoBehaviour
     {
         stateMachine = new StateMachine();
         
-        hitState = new HitState(this, core, stateMachine, data, hitId);
         idleState = new IdleState(this, core, stateMachine, data, idleId);
+        dashState = new DashState(this, core, stateMachine, data, dashId);
+        hitState = new HitState(this, core, stateMachine, data, hitId);
         moveState = new MoveState(this, core, stateMachine, data, moveId);
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
     }
@@ -69,7 +72,7 @@ public class Player : MonoBehaviour
 
     void SetUpCombatComponent(Combat combat)
     {
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Player, IDamageable.KnockbackType.player); 
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Player, IDamageable.KnockbackType.weak); 
     }
 
     void SetUpRecoveryComponent(RecoveryController recoveryController)

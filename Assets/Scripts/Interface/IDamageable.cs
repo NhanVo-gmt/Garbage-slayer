@@ -12,9 +12,7 @@ public interface IDamageable
     public enum KnockbackType
     {
         none,
-        weak,
-        strong,
-        player
+        weak
     }
     
     public DamagerTarget GetDamagerType();

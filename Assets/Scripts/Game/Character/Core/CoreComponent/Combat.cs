@@ -142,12 +142,6 @@ public class Combat : CoreComponent, IDamageable
             case IDamageable.KnockbackType.weak:
                 knockbackAmount = settings.WeakKnockbackAmount;
                 break;
-            case IDamageable.KnockbackType.strong:
-                knockbackAmount = settings.StrongKnockbackAmount;
-                break;
-            case IDamageable.KnockbackType.player:
-                knockbackAmount = settings.PlayerKnockbackAmount;
-                break;
             
         }
         

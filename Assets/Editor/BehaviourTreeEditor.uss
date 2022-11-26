@@ -1,0 +1,13 @@
+GridBackground {
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(193, 196, 192, 0.1);
+    --thick-line-color: rgba(193, 196, 192, 0.1);
+    --spacing: 15;
+}
+
+.label-style {
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    color: rgba(255, 255, 255, 255);
+    font-size: 14px;
+    background-color: rgba(43, 43, 43, 255);
+}

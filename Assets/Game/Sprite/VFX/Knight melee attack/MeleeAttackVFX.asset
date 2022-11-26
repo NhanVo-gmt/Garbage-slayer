@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MeleeAttackVFX
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 1414942283507309097, guid: 23261cf7fc685904a98b48ed22865d54, type: 3}
-  needPlayerDirection: 0
-  spawnPos: {x: 0, y: 0}
+  needPlayerDirection: 1
+  spawnPos: {x: -1, y: 0.2}
   lifeTime: 1

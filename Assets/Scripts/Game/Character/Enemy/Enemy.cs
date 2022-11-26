@@ -53,6 +53,16 @@ public class Enemy : MonoBehaviour
         InitializeTreeNodeComponent();
     }
 
+    private void OnEnable() {
+        if (health == null) return;
+
+        health.onDie += Die;
+    }
+
+    private void OnDisable() {
+        health.onDie -= Die;
+    }
+
     private void GetCoreComponent()
     {
         combat = core.GetCoreComponent<Combat>();
@@ -67,6 +77,7 @@ public class Enemy : MonoBehaviour
     {
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
         health.SetHealth(data.healthData);
+        health.onDie += Die;
     }
 
     void InitializeTreeNodeComponent()
@@ -91,12 +102,22 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other) {
         if (other == col) return;
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
+            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero);
+            Die();
         }
+        else if (other.GetComponent<Player>() != null)
+        {
+            Die();
+        }
+    }
+
+    void Die() 
+    {
+        Destroy(gameObject);
     }
 }

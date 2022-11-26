@@ -60,6 +60,11 @@ public class Health : CoreComponent
         onTakeDamage?.Invoke();
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
+
     private void Die()
     {
         isDie = true;

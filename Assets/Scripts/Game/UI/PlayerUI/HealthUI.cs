@@ -23,6 +23,7 @@ public class HealthUI : MonoBehaviour
         health = FindObjectOfType<Player>().GetCoreComponent<Health>();
 
         SpawnHealthImage();
+        
         health.onUpdateHealth += UpdateHealthUI;
     }
 
@@ -31,6 +32,7 @@ public class HealthUI : MonoBehaviour
         for (int i = 0; i < FindObjectOfType<GameSettings>().maxHealth; i++)
         {
             HealthImage image = Instantiate(imagePrefab, transform);
+            Debug.Log(1);
             image.Disable();
             healthImageList.Add(image);
         }
