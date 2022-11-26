@@ -82,8 +82,11 @@ public class PatrolNode : ActionNode
         return State.RUNNING;
     }
 
+#if UNITY_EDITOR
     public override void DrawGizmos() 
     {
         BehaviourTreeDrawingGizmos.DrawPatrolLine(pointWays);
     } 
+
+#endif
 }

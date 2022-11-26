@@ -24,7 +24,11 @@ public abstract class ActionNode : Node
         RemoveAnimationEvent();
     }
 
-    protected virtual void PlayAnimation(){}
+    protected virtual void PlayAnimation()
+    {
+        if (anim == null) return;
+    }
+    
     public abstract void CopyNode(ActionNode copyNode);
 
 #region Animation Event

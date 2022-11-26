@@ -15,9 +15,12 @@ using Object = UnityEngine.Object;
 /// Shows you all values under the object reference
 /// Also provides a button to create a new ScriptableObject if property is null.
 /// </summary>
+#if UNITY_EDITOR
+
 [CustomPropertyDrawer(typeof(ScriptableObject), true)]
 public class ExtendedScriptableObjectDrawer : PropertyDrawer {
-	
+
+
 	public override float GetPropertyHeight (SerializedProperty property, GUIContent label) {
 		float totalHeight = EditorGUIUtility.singleLineHeight;
 		if(property.objectReferenceValue == null || !AreAnySubPropertiesVisible(property)){
@@ -285,4 +288,6 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 		serializedObject.Dispose();
 		return false;
 	}
+
 }
+#endif

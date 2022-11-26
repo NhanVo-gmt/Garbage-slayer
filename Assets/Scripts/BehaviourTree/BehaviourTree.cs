@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = " Behaviour")]
-public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
+public class BehaviourTree : ScriptableObject
 {
     public Node rootNode;
     public Node.State treeState = Node.State.RUNNING;
@@ -22,6 +22,36 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 
             GetAllChild(node).ForEach((n) => Traverse(n, visiter));
         }
+    }
+
+    public void Reset() 
+    {
+        GetAllChild(rootNode).ForEach((n) => n.Abort());
+    }
+
+    public List<Node> GetAllChild(Node parent) 
+    {
+        List<Node> childList = new List<Node>();
+
+        DecoratorNode decoratorNode = parent as DecoratorNode;
+        if (decoratorNode != null && decoratorNode.child != null)
+        {
+            childList.Add(decoratorNode.child);
+        }
+
+        RootNode rootNode = parent as RootNode;
+        if (rootNode != null && rootNode.child != null)
+        {
+            childList.Add(rootNode.child);
+        }
+
+        CompositeNode compositeNode = parent as CompositeNode;
+        if (compositeNode != null && compositeNode.children != null)
+        {
+            return compositeNode.children;
+        }
+
+        return childList;
     }
 
     public BehaviourTree Clone() 
@@ -181,30 +211,6 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-    public List<Node> GetAllChild(Node parent) 
-    {
-        List<Node> childList = new List<Node>();
-
-        DecoratorNode decoratorNode = parent as DecoratorNode;
-        if (decoratorNode != null && decoratorNode.child != null)
-        {
-            childList.Add(decoratorNode.child);
-        }
-
-        RootNode rootNode = parent as RootNode;
-        if (rootNode != null && rootNode.child != null)
-        {
-            childList.Add(rootNode.child);
-        }
-
-        CompositeNode compositeNode = parent as CompositeNode;
-        if (compositeNode != null && compositeNode.children != null)
-        {
-            return compositeNode.children;
-        }
-
-        return childList;
-    }
 
     public void OnBeforeSerialize()
     {
@@ -213,6 +219,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 
     private void OnValidate()
     {
+
         string path = AssetDatabase.GetAssetPath(this);
         if (path != "")
         {
@@ -231,6 +238,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     {
         
     }
-
+    
 #endif
 }
+

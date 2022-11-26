@@ -8,6 +8,9 @@ using System.Linq;
 
 public class CreatePrefabFromAnimationClip : MonoBehaviour
 {
+
+#if UNITY_EDITOR
+
     static string PooledObjectPath = "Assets/Game/Prefabs/PooledObject/PooledObject.prefab";
     static string EnemyObjectPath = "Assets/Game/Prefabs/Character/Enemy.prefab";
     [NonSerialized] static List<AnimationClip> clipSelected = new List<AnimationClip>();
@@ -188,4 +191,6 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
 
         return clip.name;
     }
+
+#endif
 }

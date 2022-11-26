@@ -11,6 +11,7 @@ public class Health : CoreComponent
     public Action onDie;
     public Action<int> onUpdateHealth;
 
+    HealthData data;
     RecoveryController recoveryController;
 
     private bool isDie = false;
@@ -20,6 +21,7 @@ public class Health : CoreComponent
     public void SetHealth(HealthData data)
     {
         health = data.health;
+        this.data = data; 
         onUpdateHealth?.Invoke(health);
     }
 
@@ -69,5 +71,12 @@ public class Health : CoreComponent
     {
         isDie = true;
         onDie?.Invoke();
+
+        ResetHealth();
+    }
+
+    void ResetHealth()
+    {
+        health = data.health;
     }
 }

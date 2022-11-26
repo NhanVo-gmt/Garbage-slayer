@@ -20,7 +20,7 @@ public class JumpState : AbilityState
         player.inputManager.UseJumpInput();
         movement.SetVelocityY(data.jumpData.velocity);
 
-        //SpawnVFX(); todo
+        SpawnVFX();
     }
 
     private void SpawnVFX()
@@ -44,7 +44,7 @@ public class JumpState : AbilityState
         }
         else
         {
-            //stateMachine.ChangeState(player.inAirState);
+            stateMachine.ChangeState(player.inAirState);
         }
     }
 

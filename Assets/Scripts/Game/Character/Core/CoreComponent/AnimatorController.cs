@@ -36,15 +36,6 @@ public class AnimatorController : CoreComponent
         health.onTakeDamage += StartFlashing;
     }
 
-    private void OnDisable() {
-        RemoveEvent();
-    }
-
-    void RemoveEvent()
-    {
-        health.onTakeDamage -= StartBlinking;
-        health.onTakeDamage -= StartFlashing;
-    }
     
 #region Animation
     
@@ -77,9 +68,10 @@ public class AnimatorController : CoreComponent
     public void StartFlashing()
     {
         if (flashingEffect == null) return;
-        
+
         flashingEffect.StartFlashing();
     }
 
 #endregion
+
 }

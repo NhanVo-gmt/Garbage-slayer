@@ -48,15 +48,6 @@ public class Combat : CoreComponent, IDamageable
         health.onTakeDamage += Knockback;
     }
 
-    private void OnDisable() {
-        RemoveEvent();
-    }
-
-    private void RemoveEvent()
-    {
-        health.onTakeDamage -= Knockback;
-    }
-
     #endregion
 
 #region Damage Method

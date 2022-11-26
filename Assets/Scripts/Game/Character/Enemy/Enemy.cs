@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     Movement movement;
     Health health;
     SpawnObjectController vfx;
+    PooledObject pooledObject;
     public BehaviourTreeComponent treeComponent {get; private set;}
 
     Collider2D col;
@@ -51,6 +52,8 @@ public class Enemy : MonoBehaviour
         GetCoreComponent();
 
         InitializeTreeNodeComponent();
+
+        pooledObject = GetComponent<PooledObject>();
     }
 
     private void OnEnable() {
@@ -75,7 +78,7 @@ public class Enemy : MonoBehaviour
 
     void SetUpComponent()
     {
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
         health.SetHealth(data.healthData);
         health.onDie += Die;
     }
@@ -110,11 +113,22 @@ public class Enemy : MonoBehaviour
             target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero);
             Die();
         }
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if (!data.isFalling) return;
+
+        if (other.collider.CompareTag("Ground"))
+        {
+            Die();
+        }
     }
 
     void Die() 
     {
-        Destroy(gameObject);
+        pooledObject.Release();
+        tree.Reset();
     }
+
+
 }

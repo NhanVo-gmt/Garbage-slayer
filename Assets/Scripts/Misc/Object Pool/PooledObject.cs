@@ -22,9 +22,17 @@ public class PooledObject : MonoBehaviour
     // Used in animation clip
     public void Release()
     {
-        anim.Rebind();
-        anim.Update(0f);
+        ResetAnimator();
 
         pool.Release(gameObject);
+    }
+
+    void ResetAnimator()
+    {
+        if (anim != null)
+        {
+            anim.Rebind();
+            anim.Update(0f);
+        }
     }
 }

@@ -45,6 +45,13 @@ public class AbilityState : State
     {
         base.AnimationFinishTrigger();
 
-        stateMachine.ChangeState(player.idleState);
+        if (collisionSenses.isGround)
+        {
+            stateMachine.ChangeState(player.idleState);
+        }
+        else
+        {
+            stateMachine.ChangeState(player.inAirState);
+        }
     }
 }

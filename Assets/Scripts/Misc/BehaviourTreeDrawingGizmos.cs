@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
+
+#if UNITY_EDITOR
 public class BehaviourTreeDrawingGizmos : MonoBehaviour
 {
     static int index = 0;
@@ -57,4 +59,6 @@ public class BehaviourTreeDrawingGizmos : MonoBehaviour
         }
 
     }
+
 }
+#endif

@@ -42,8 +42,10 @@ public class SeePlayerNode : ActionNode
         return State.FAILURE;
     }
 
+#if UNITY_EDITOR
     public override void DrawGizmos()
     {
         BehaviourTreeDrawingGizmos.DrawWireSphere(seeRange);
     }
+#endif
 }
