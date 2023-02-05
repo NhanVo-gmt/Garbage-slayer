@@ -35,4 +35,4 @@
   
   <!-- Markdown-links -->
   [game-image]:
-  [project-links]:
+  [project-link]: https://mytien12314.itch.io/garbage-slayer
