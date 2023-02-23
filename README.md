@@ -34,5 +34,5 @@
   3. Click on the application and enjoy!
   
   <!-- Markdown-links -->
-  [game-image]: https://www.facebook.com
+  [game-image]: image.png
   [project-link]: https://mytien12314.itch.io/garbage-slayer
